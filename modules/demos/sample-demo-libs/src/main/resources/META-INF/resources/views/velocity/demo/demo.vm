@@ -1,0 +1,3 @@
+<script src="#getAssetsPath('webjars/demo/assets/custom/demo/a.js')"></script>
+<script src="#getAssetsPath('custom/b.js')"></script>
+<div><button class="btn btn-primary">测试</button></div>

@@ -1,0 +1,2 @@
+#macro( getRequestBase)#if($rc.contextPath != "")$rc.contextPath#end#end
+#macro( getAssetsPath $assetsPath)#getRequestBase()/assets/$assetsPath#end

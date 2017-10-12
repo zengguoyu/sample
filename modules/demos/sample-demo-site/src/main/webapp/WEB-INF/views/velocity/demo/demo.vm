@@ -1,0 +1,3 @@
+<script src="#getAssetsPath('custom/demo/a.js')"></script>
+
+<div><button class="btn btn-primary">测试</button></div>

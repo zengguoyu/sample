@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pager="http://kenny.com/schema/mybatis/pager"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://kenny.com/schema/mybatis/pager http://kenny.com/schema/mybatis/pager/pager.xsd">
+
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/eepj_base_scurity?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="username" value="eepj" />
+		<property name="password" value="eepj" />
+	</bean>
+
+
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configuration" ref="configuration" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath*:/mybatis/mapping/*Mapper.xml" />
+		<property name="plugins">
+			<array>
+				<ref bean="pageInterceptor"/>
+			</array>
+		</property>
+	</bean>
+
+	<bean id="configuration" class="org.apache.ibatis.session.Configuration">
+		<property name="mapUnderscoreToCamelCase" value="true" />
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean" />
+		<property name="basePackage" value="com.kenny.mapper" />
+<!-- 		<property name="annotationClass" value="org.springframework.stereotype.Repository" /> -->
+	</bean>
+
+	<pager:annotation-driven dialect="DIALECT_MYSQL" pageInterceptorId="pageInterceptor"/>
+</beans>

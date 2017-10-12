@@ -1,0 +1,22 @@
+#parse("control/css.vm")
+<script>
+	var basePath = "$rc.contextPath";
+	if(!basePath || basePath==''){
+	    basePath="/";
+	}else if(!basePath.endsWith('/')){
+		basePath+="/";
+	}
+	
+	
+	function setIframeHeight(iframe) {
+		if (iframe) {
+			var iframeWin = iframe.contentWindow
+					|| iframe.contentDocument.parentWindow;
+			if (iframeWin.document.body) {
+				iframe.height = iframeWin.document.documentElement.scrollHeight
+						|| iframeWin.document.body.scrollHeight;
+			}
+		}
+	}
+</script> 
+#parse("/control/javascript.vm")

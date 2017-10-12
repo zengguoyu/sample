@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="MysqlTables" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin
+			type="com.kenny.mybatis.generate.plugin.PaginationAnnotaionPlugin" />
+		<plugin type="com.kenny.mybatis.generate.plugin.SqlMapUnMergePlugin" />
+		<plugin
+			type="com.kenny.mybatis.generate.plugin.MybatisPaginationPlugin">
+			<property name="extends" value="com.kenny.common.mybatis.pager.BaseMapper" />
+		</plugin>
+		<plugin type="com.kenny.mybatis.generate.plugin.TopSerializablePlugin">
+			<property name="suppressJavaInterface" value="false" />
+		</plugin>
+
+
+		<commentGenerator
+			type="com.kenny.mybatis.generate.plugin.DBCommentGenerator">
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/数据库名?useUnicode=true&amp;characterEncoding=UTF-8"
+			userId="用户名" password="密码">
+			<property name="remarksReporting" value="true" />
+		</jdbcConnection>
+
+		<!-- POJO类生成配置 -->
+		<javaModelGenerator targetPackage=" 实体类所在的包名"
+			targetProject="实体类存放的位置">
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- SqlMap文件生成配置 -->
+		<sqlMapGenerator targetPackage="mybatis/mapping"
+			targetProject="配置文件生成后存放的位置如：src/main/resources">
+		</sqlMapGenerator>
+
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="dao所在的包名" targetProject="到生成后存放的位置">
+		</javaClientGenerator>
+
+		<!-- Dao生成配置 -->
+		<table schema="数据库名，可以不配置" tableName="数据库表名"
+			domainObjectName="实体类名">
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="数据库名，可以不配置" tableName="数据库表名"
+			domainObjectName="实体类名">
+			<generatedKey column="uuid" sqlStatement="select replace(uuid(),'-','');" />
+		</table>
+	</context>
+
+</generatorConfiguration>

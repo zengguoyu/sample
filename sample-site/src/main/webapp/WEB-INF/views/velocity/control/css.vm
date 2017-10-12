@@ -1,0 +1,6 @@
+<!-- VENDOR CSS -->
+<link rel="stylesheet" href="#getAssetsPath('static/bootstrap/css/bootstrap.min.css')"/>
+<link rel="stylesheet" href="#getAssetsPath('static/font-awesome-4.7.0/css/font-awesome.min.css')"/>
+##<link rel="stylesheet" href="#getAssetsPath('statics/plugins/jqgrid/ui.jqgrid-bootstrap.css')"/>
+##<link rel="stylesheet" href="#getAssetsPath('statics/plugins/ztree/css/metroStyle/metroStyle.css')"/>
+<link rel="stylesheet" href="#getAssetsPath('static/css/main.css')"/>

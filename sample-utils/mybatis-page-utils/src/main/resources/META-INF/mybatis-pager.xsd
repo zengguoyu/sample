@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://kenny.com/schema/mybatis/pager"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://kenny.com/schema/mybatis/pager">
+
+	<xsd:complexType name="annotation-driven-complex-type">
+		<xsd:attribute name="pageInterceptorId" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="dialect" default="mysql" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:element name="annotation-driven">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="annotation-driven-complex-type">
+					<xsd:attribute name="pageInterceptorId" type="xsd:string"
+						default="pageInterceptor" />
+					<xsd:attribute name="dialect" default="DIALECT_MYSQL">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="DIALECT_DB2" />
+								<xsd:enumeration value="DIALECT_MYSQL" />
+								<xsd:enumeration value="DIALECT_MSSQL" />
+								<xsd:enumeration value="DIALECT_ORACLE" />
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:attribute>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
+ 
