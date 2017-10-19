@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <!-- BOOTSTRAP STYLES-->
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"/>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+        <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"/>
+        <META HTTP-EQUIV="Expires" CONTENT="0"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="#springUrl('/assets/libs/img/apple-icon.png')"/>
+        <link rel="icon" type="image/png" sizes="96x96" href="#springUrl('/assets/libs/img/favicon.png')"/>
+        #parse("control/meta.vm")
+		
+		
+        <style>
+            html,
+			body,
+			.page-content-wapper{
+				height:100%;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="page-content-wapper" style="background:#fff;padding:8px">
+            $screen_content  
+        </section>
+    </body>
+</html>

@@ -33,7 +33,6 @@
 		<dependency>
 			<groupId>com.kenny.sample</groupId>
 			<artifactId>mybatis-page-utils</artifactId>
-			<version>1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

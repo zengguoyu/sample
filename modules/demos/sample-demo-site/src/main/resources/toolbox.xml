@@ -1,0 +1,16 @@
+<toolbox>
+	<data type="string">
+		<key>version</key>
+		<value>0.1</value>
+	</data>
+
+	<data type="string">
+		<key>appName</key>
+		<value>EEPJ-BASE</value>
+	</data>
+
+	<data type="string">
+		<key>appShortName</key>
+		<value>BASE</value>
+	</data>
+</toolbox>

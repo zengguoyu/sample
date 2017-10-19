@@ -104,7 +104,6 @@
 		<dependency>
 			<groupId>com.kenny.sample</groupId>
 			<artifactId>mybatis-generator-tools</artifactId>
-			<version>1.0-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -126,17 +125,16 @@
 		<dependency>
 			<groupId>com.kenny.sample</groupId>
 			<artifactId>mybatis-page-utils</artifactId>
-			<version>1.0-SNAPSHOT</version>
 		</dependency>
-		
-		
-			<dependency>
-				<groupId>org.apache.velocity</groupId>
-				<artifactId>velocity</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.velocity</groupId>
-				<artifactId>velocity-tools</artifactId>
-			</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+		</dependency>
 	</dependencies>
 </project>
