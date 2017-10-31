@@ -1,11 +1,4 @@
 <!-- Javascript -->
-<script type="text/javascript" src="#getAssetsPath('static/jquery-2.1.4/jquery.min.js')"></script>
-<script type="text/javascript" src="#getAssetsPath('static/layer-v3.1.0/layer.js')"></script>
 <script type="text/javascript" src="#getAssetsPath('static/bootstrap/js/bootstrap.min.js')"></script>
 <script type="text/javascript" src="#getAssetsPath('static/vue/vue.min.js')"></script>
-##<script type="text/javascript" src="#getAssetsPath('statics/plugins/jqgrid/grid.locale-cn.js')"></script>
-##<script type="text/javascript" src="#getAssetsPath('statics/plugins/jqgrid/jquery.jqGrid.min.js')"></script>
-##<script type="text/javascript" src="#getAssetsPath('statics/plugins/ztree/jquery.ztree.all.min.js')"></script>
-##<script type="text/javascript" src="#getAssetsPath('statics/plugins/ztree/jquery.ztree.exhide.min.js')"></script>
-<script type="text/javascript" src="#getAssetsPath('static/js/common.js')"></script>
 

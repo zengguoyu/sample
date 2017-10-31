@@ -50,6 +50,34 @@
 			domainObjectName="SysUser">
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table> 
+		<table  tableName="sys_user_image"
+			domainObjectName="SysUserImage">
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table> 
+
+
+
+		<table  tableName="sys_user_position"
+			domainObjectName="SysUserPosition">
+			<generatedKey column="uuid" sqlStatement="select uuid();" />
+		</table>
+
+		<table  tableName="sys_user_position_relation"
+			domainObjectName="SysUserPositionRelation">
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table  tableName="sys_organization"
+			domainObjectName="SysOrganization">
+			<generatedKey column="uuid" sqlStatement="select uuid();" />
+		</table>
+
+		<table  tableName="sys_organization_inner"
+			domainObjectName="SysOrganizationInner">
+			<generatedKey column="uuid" sqlStatement="select uuid();" />
+		</table>
+ 
+		
+		 
 	</context>
 
 </generatorConfiguration>

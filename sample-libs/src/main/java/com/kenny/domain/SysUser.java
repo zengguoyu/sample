@@ -3,6 +3,11 @@ package com.kenny.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+* @author ZengGuoyu
+* @date 2017-10-24 21:05:20
+* @description 本文件自动生成，请勿修改
+*/
 public class SysUser implements Serializable {
     private static final long serialVersionUID = 1L;
 

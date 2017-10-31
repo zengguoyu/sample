@@ -10,8 +10,12 @@ import org.mybatis.generator.api.dom.xml.TextElement;
 import org.mybatis.generator.api.dom.xml.XmlElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-public class GroupByPlugin extends PluginAdapterEnhance {
+/**
+ * 
+ * @author kenny
+ *
+ */
+public class GroupByPlugin extends AbstractPluginAdapterEnhance {
 
 
 	private Logger log = LoggerFactory.getLogger(this.getClass());

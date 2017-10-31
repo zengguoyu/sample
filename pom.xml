@@ -9,6 +9,7 @@
 
 	<properties>
 		<spring.version>4.2.6.RELEASE</spring.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
 		<plugins>
@@ -20,6 +21,7 @@
 					<!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
 					<source>1.7</source>
 					<target>1.7</target>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -105,6 +107,40 @@
 
 			<!-- SPRING END -->
 
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>4.0.1.RELEASE</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-core</artifactId>
+				<version>4.0.1.RELEASE</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-cas</artifactId>
+				<version>4.0.1.RELEASE</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-acl</artifactId>
+				<version>4.0.1.RELEASE</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				<version>4.0.1.RELEASE</version>
+			</dependency>
+
+
+
 			<!-- 数据库相关 BEGIN -->
 			<dependency>
 				<groupId>mysql</groupId>
@@ -162,7 +198,14 @@
 				<version>4.12</version>
 				<scope>test</scope>
 			</dependency>
-			
+
+			<dependency>
+
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>1.2.30</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.apache.velocity</groupId>
 				<artifactId>velocity</artifactId>
@@ -214,13 +257,34 @@
 				<artifactId>webjars-locator-core</artifactId>
 				<version>0.32</version>
 			</dependency>
-			
 
 
-			
+
+
+			<dependency>
+				<groupId>com.kenny.sample</groupId>
+				<artifactId>sample-module</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.kenny.sample</groupId>
+				<artifactId>sample-libs</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.kenny.sample</groupId>
+				<artifactId>sample-common-utils</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.kenny.sample</groupId>
+				<artifactId>sample-security</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<!-- 阿里云maven仓库 -->
 	<repositories>
 		<repository>
@@ -247,8 +311,8 @@
 	</pluginRepositories>
 	<modules>
 		<module>sample-libs</module>
-		<module>sample-site</module>
-		<module>sample-utils/mybatis-generator-tools</module>
-		<module>sample-utils/mybatis-page-utils</module>
+		<module>sample-site</module> 
+		<module>sample-modules</module>
+		<module>sample-utils</module>
 	</modules>
 </project>

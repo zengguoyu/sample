@@ -65,6 +65,11 @@ public class SysUserExample {
         distinct = false;
     }
 
+    /**
+    * @author ZengGuoyu
+    * @date 2017-10-24 21:05:20
+    * @description 本文件自动生成，请勿修改
+    */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
 
@@ -1113,6 +1118,11 @@ public class SysUserExample {
         }
     }
 
+    /**
+    * @author ZengGuoyu
+    * @date 2017-10-24 21:05:20
+    * @description 本文件自动生成，请勿修改
+    */
     public static class Criteria extends GeneratedCriteria {
 
         protected Criteria() {
@@ -1120,6 +1130,11 @@ public class SysUserExample {
         }
     }
 
+    /**
+    * @author ZengGuoyu
+    * @date 2017-10-24 21:05:20
+    * @description 本文件自动生成，请勿修改
+    */
     public static class Criterion {
         private String condition;
 

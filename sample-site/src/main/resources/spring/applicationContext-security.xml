@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<security:http pattern="/assets/**" security="none" />
+	<security:http pattern="/login/page" security="none" />
+	<security:debug />
+	<security:http use-expressions="false" auto-config="true">
+		<security:csrf disabled="true" />
+		<security:intercept-url pattern="/**" access="ROLE_USER" />
+		<security:form-login login-page="/login/page" login-processing-url="/login"
+			authentication-details-source-ref="customAuthenticationDetailsSource" />
+	</security:http>
+
+	<security:authentication-manager>
+		<security:authentication-provider
+			ref="authenticationProvider" />
+	</security:authentication-manager>
+
+	<bean id="customAuthenticationDetailsSource" class="com.kenny.security.CustomAuthenticationDetailsSource"></bean>
+	<bean id="authenticationProvider" class="com.kenny.security.CustomAuthenticationProvider">
+		<property name="userDetailsService" ref="userLoginService" />
+	</bean>
+</beans>

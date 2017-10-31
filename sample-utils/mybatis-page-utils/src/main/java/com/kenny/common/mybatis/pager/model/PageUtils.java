@@ -14,8 +14,9 @@ public class PageUtils {
 	}
 
 	public static <T> Page<T> makePage(int offset, int limit) {
-		if (limit == 0)
+		if (limit == 0){
 			throw new IllegalArgumentException("分页大小不能为0");
+		}
 		Page<T> page = Page.makePageByOffsetRecord(offset, limit);
 		page.setPageSize(limit);
 		return page;

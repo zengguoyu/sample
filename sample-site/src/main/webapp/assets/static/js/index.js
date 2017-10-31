@@ -42,7 +42,7 @@ var vm = new Vue({
 	data : {
 		user : {},
 		menuList : {},
-		main : "main.htm",
+		main : "home/main.htm",
 		password : '',
 		newPassword : '',
 		rePassword : '',

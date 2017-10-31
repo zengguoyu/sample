@@ -19,7 +19,7 @@ import org.mybatis.generator.api.dom.xml.XmlElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MysqlSplitingTablePlugin extends PluginAdapterEnhance {
+public class MysqlSplitingTablePlugin extends AbstractPluginAdapterEnhance {
 
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 

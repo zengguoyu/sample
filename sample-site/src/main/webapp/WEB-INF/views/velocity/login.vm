@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      
+    </head>
+    <!-- ADD THE CLASS layout-boxed TO GET A BOXED LAYOUT -->
+    <body class="hold-transition skin-blue sidebar-mini">
+		<form method="post" action="http://localhost:8080/sample-site/login">
+			<input type="text" name="username"/>
+			<input type="text" name="password"/>
+			<input type="text" name="appId"/>
+			<button>登录</buttonn>
+		</form>       
+    </body>
+</html>

@@ -137,7 +137,8 @@ public final class CommonExecutor {
 		if (countSql != null) {
 			totalCount = doQueryCount(executor, countSql, ms, parameter, rowBounds, resultHandler, key, boundSql);
 			// 2,如果是我们自己写的分页Bounds，则塞入total
-			if (rowBounds instanceof PageBounds) { // 不加totalCount>0的限制
+			if (rowBounds instanceof PageBounds) { 
+				// 不加totalCount>0的限制
 				((PageBounds) rowBounds).setTotal(totalCount);
 			}
 		}
@@ -180,11 +181,15 @@ public final class CommonExecutor {
 				String originalSql = boundSql.getSql();
 				Field field = ReflectionUtils.findField(BoundSql.class, "sql");
 				ReflectionUtils.makeAccessible(field);
-				ReflectionUtils.setField(field, boundSql, countSql);// 先替换成countSql，做完事在换回来originalSql
+
+				// 先替换成countSql，做完事在换回来originalSql
+				ReflectionUtils.setField(field, boundSql, countSql);
 				RowBounds countRowBounds = RowBounds.DEFAULT;
 				StatementHandler handler = new RoutingStatementHandler(executor, ms, parameter, countRowBounds,
 						resultHandler, boundSql);
-				stmt = pageExecutor.prepareStatement(handler, ms.getStatementLog());// 这里生成了Statement某个实现类的对象
+				// 这里生成了Statement某个实现类的对象
+				stmt = pageExecutor.prepareStatement(handler, ms.getStatementLog());
+				
 				// 下面就是return handler.<E>query(stmt, resultHandler);做的事情了
 				// delegate
 				Field delegateField = ReflectionUtils.findField(RoutingStatementHandler.class, "delegate");
@@ -208,7 +213,8 @@ public final class CommonExecutor {
 				}
 				logger.info("CommonExecutor#totalCount = " + totalCount);
 				//
-				ReflectionUtils.setField(field, boundSql, originalSql);// 先替换成countSql，做完事在换回来originalSql
+				// 先替换成countSql，做完事在换回来originalSql
+				ReflectionUtils.setField(field, boundSql, originalSql);
 				/* *** 查总数方案1.end */
 			}
 			// 不捕获异常

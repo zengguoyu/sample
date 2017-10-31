@@ -43,12 +43,12 @@ public class Page<T> implements java.io.Serializable {
 	/**
 	 * 默认的分页大小 20
 	 */
-	private int pageSize = DEFAULT_COUNT;// current page records count
+	private int pageSize = DEFAULT_COUNT;
 
 	/**
 	 * 当前查询的记录数
 	 */
-	private int total = 0;// total page number
+	private int total = 0;
 
 	private List<T> records;
 
@@ -96,8 +96,9 @@ public class Page<T> implements java.io.Serializable {
 		if (pageSize >= 1) {
 			page.setPageSize(pageSize);
 		}
-		if (offset >= 0)
+		if (offset >= 0) {
 			page.startIndex = offset;
+		}
 		return page;
 	}
 
@@ -130,7 +131,7 @@ public class Page<T> implements java.io.Serializable {
 		} else {
 			// 向上取整
 			this.pageTotal = (int) Math.ceil(total * 1.0f / getPageSize());
-			this.pageNo =Math.min(getStartIndex() / getPageSize() + 1,this.pageTotal);
+			this.pageNo = Math.min(getStartIndex() / getPageSize() + 1, this.pageTotal);
 		}
 
 	}
