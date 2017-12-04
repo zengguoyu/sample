@@ -66,7 +66,7 @@ public class SysUserPositionRelationExample {
 
     /**
     * @author ZengGuoyu
-    * @date 2017-10-24 21:05:20
+    * @date 2017-11-03 22:29:06
     * @description 本文件自动生成，请勿修改
     */
     protected abstract static class GeneratedCriteria {
@@ -423,7 +423,7 @@ public class SysUserPositionRelationExample {
 
     /**
     * @author ZengGuoyu
-    * @date 2017-10-24 21:05:20
+    * @date 2017-11-03 22:29:06
     * @description 本文件自动生成，请勿修改
     */
     public static class Criteria extends GeneratedCriteria {
@@ -435,7 +435,7 @@ public class SysUserPositionRelationExample {
 
     /**
     * @author ZengGuoyu
-    * @date 2017-10-24 21:05:20
+    * @date 2017-11-03 22:29:06
     * @description 本文件自动生成，请勿修改
     */
     public static class Criterion {

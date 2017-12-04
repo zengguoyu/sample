@@ -17,8 +17,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>
-			classpath:springmvc-servlet.xml</param-value>
+			<param-value>classpath:springmvc-servlet.xml</param-value>
 		</init-param>
 		<init-param>
 			<param-name>throwExceptionIfNoHandlerFound</param-name>
@@ -47,14 +46,17 @@
 	</filter>
 	
 	
+	
 	<filter>
-		<filter-name>appSelect</filter-name>
-		<filter-class>com.kenny.filter.AppSelectFilter</filter-class>
+		<filter-name>systemInitFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>
 	<filter-mapping>
-		<filter-name>appSelect</filter-name>
+		<filter-name>systemInitFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>

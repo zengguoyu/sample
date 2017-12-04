@@ -1,0 +1,78 @@
+#set($layout='layout/empty.vm')
+<!DOCTYPE html>
+<html>
+    <head>
+        #parse("control/css.vm")
+        #parse("control/javascript.vm")
+        <style>
+			.el-form-item {
+                margin-bottom: 0;
+            }
+		</style>
+    </head>
+    <body >
+        <div id="app" v-cloak>
+            <el-steps :active="active" finish-status="success" align-center  style="margin:80px;">
+                <el-step title="步骤 1" description="设置所属企业"></el-step>
+                <el-step title="步骤 2" description="设置超级管理员账号"></el-step>
+                <el-step title="步骤 3" description="完成"></el-step>
+            </el-steps>
+			
+			
+            <el-form  ref="form" :rules="rules" :model="formData" label-width="120px" style="max-width:400px; margin:0 auto;"  inline-message=true>
+                <span v-show="active==0"  >
+                    <el-form-item   label="企业名称" prop="orgName" >
+                        <el-input v-model="formData.orgName" ></el-input>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-button  :disabled="organizationNext" style="margin-top: 12px;" @click="next(1)">下一步</el-button>
+                    </el-form-item>
+                </span>
+                <span v-show="active==1">
+                    <el-form-item label="管理员姓名" prop="adminUserName">
+                        <el-input v-model="formData.adminUserName"></el-input>
+                    </el-form-item>
+                    <el-form-item label="登录名" prop="adminLoginName">
+                        <el-input v-model="formData.adminLoginName"></el-input>
+                    </el-form-item>
+                    <el-form-item label="密码" prop="adminPassword">
+                        <el-input  type="password"  v-model="formData.adminPassword"></el-input>
+                    </el-form-item>
+                    <el-form-item label="密码" prop="adminRePassword">
+                        <el-input  type="password"  v-model="formData.adminRePassword"></el-input>
+                    </el-form-item>
+                    <el-form-item label="手机号" prop="adminPhoneNumber">
+                        <el-input type="text" v-model="formData.adminPhoneNumber"></el-input>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-button style="margin-top: 12px;" @click="next(-1)">上一步</el-button>
+                        <el-button   :disabled="adminNext"   style="margin-top: 12px;" @click="next(1)">下一步</el-button>
+                    </el-form-item>
+                </span>
+                <span v-show="active==2">
+						<el-form-item label="企业名称:"> 
+							<span>{{formData.orgName}}</span>
+						</el-form-item>
+                    <el-form-item label="管理员姓名:" >
+                        <span>{{formData.adminUserName}}</span>
+                    </el-form-item>	
+                    <el-form-item label="登录名:">
+                        <span>{{formData.adminLoginName}}</span>
+                    </el-form-item>	
+                    <el-form-item label="手机号:">
+                        <span>{{formData.adminPhoneNumber}}</span>
+                    </el-form-item>
+                    <el-form-item label="性别:">
+                        <span>{{sexString}}</span>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-button style="margin-top: 12px;" @click="next(-1)">上一步</el-button>
+                        <el-button type="primary"  >提交</el-button>
+                    </el-form-item>
+                </span>
+            </el-form>
+        </div> 
+	</div>
+    </body>
+    <script type="text/javascript" src="#getAssetsPath('custom/system/init.js')"></script>
+</html>

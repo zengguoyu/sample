@@ -7,11 +7,9 @@
 	<context id="MysqlTables" targetRuntime="MyBatis3">
 		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
 		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
-		<plugin
-			type="com.kenny.mybatis.generate.plugin.PaginationAnnotaionPlugin" />
+		<plugin type="com.kenny.mybatis.generate.plugin.PaginationAnnotaionPlugin" />
 		<plugin type="com.kenny.mybatis.generate.plugin.SqlMapUnMergePlugin" />
-		<plugin
-			type="com.kenny.mybatis.generate.plugin.MybatisPaginationPlugin">
+		<plugin type="com.kenny.mybatis.generate.plugin.MybatisPaginationPlugin">
 			<property name="extends" value="com.kenny.common.mybatis.pager.BaseMapper" />
 		</plugin>
 		<plugin type="com.kenny.mybatis.generate.plugin.TopSerializablePlugin">
@@ -46,38 +44,36 @@
 		</javaClientGenerator>
 
 		<!-- Dao生成配置 -->
-		<table  tableName="sys_user"
-			domainObjectName="SysUser">
+		<table tableName="sys_user" domainObjectName="SysUser">
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
-		</table> 
-		<table  tableName="sys_user_image"
-			domainObjectName="SysUserImage">
+		</table>
+		<table tableName="sys_user_image" domainObjectName="SysUserImage">
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
-		</table> 
+		</table>
 
 
 
-		<table  tableName="sys_user_position"
-			domainObjectName="SysUserPosition">
+		<table tableName="sys_user_position" domainObjectName="SysUserPosition">
 			<generatedKey column="uuid" sqlStatement="select uuid();" />
 		</table>
 
-		<table  tableName="sys_user_position_relation"
-			domainObjectName="SysUserPositionRelation">
+		<table tableName="sys_user_position_relation" domainObjectName="SysUserPositionRelation">
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
-		<table  tableName="sys_organization"
-			domainObjectName="SysOrganization">
+		<table tableName="sys_organization" domainObjectName="SysOrganization">
 			<generatedKey column="uuid" sqlStatement="select uuid();" />
 		</table>
 
-		<table  tableName="sys_organization_inner"
-			domainObjectName="SysOrganizationInner">
+		<table tableName="sys_organization_inner" domainObjectName="SysOrganizationInner">
 			<generatedKey column="uuid" sqlStatement="select uuid();" />
 		</table>
- 
-		
-		 
+
+		<table tableName="sys_param" domainObjectName="SysParam">
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+
+
+
 	</context>
 
 </generatorConfiguration>

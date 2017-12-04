@@ -4,3 +4,5 @@
 ##<link rel="stylesheet" href="#getAssetsPath('statics/plugins/jqgrid/ui.jqgrid-bootstrap.css')"/>
 ##<link rel="stylesheet" href="#getAssetsPath('statics/plugins/ztree/css/metroStyle/metroStyle.css')"/>
 <link rel="stylesheet" href="#getAssetsPath('static/css/main.css')"/>
+
+<link rel="stylesheet" href="#getAssetsPath('static/element-ui/lib/theme-chalk/index.css')"/>

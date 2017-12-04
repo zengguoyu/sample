@@ -1,14 +1,13 @@
 package com.kenny.domain;
 
 import java.io.Serializable;
-import java.util.Arrays;
 
 /**
 * @author ZengGuoyu
 * @date 2017-11-03 22:29:06
 * @description 本文件自动生成，请勿修改
 */
-public class SysUserImage implements Serializable {
+public class SysParam implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -18,16 +17,16 @@ public class SysUserImage implements Serializable {
     private Integer id;
 
     /**
-     * INTEGER(10) 必填<br>
+     * VARCHAR(100) 必填<br>
      * 
      */
-    private Integer userId;
+    private String paramName;
 
     /**
-     * LONGVARBINARY(16777215)<br>
+     * VARCHAR(100)<br>
      * 
      */
-    private byte[] img;
+    private String paramValue;
 
     /**
      * INTEGER(10) 必填<br>
@@ -46,35 +45,35 @@ public class SysUserImage implements Serializable {
     }
 
     /**
-     * INTEGER(10) 必填<br>
+     * VARCHAR(100) 必填<br>
      * 获得 
      */
-    public Integer getUserId() {
-        return userId;
+    public String getParamName() {
+        return paramName;
     }
 
     /**
-     * INTEGER(10) 必填<br>
+     * VARCHAR(100) 必填<br>
      * 设置 
      */
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setParamName(String paramName) {
+        this.paramName = paramName == null ? null : paramName.trim();
     }
 
     /**
-     * LONGVARBINARY(16777215)<br>
+     * VARCHAR(100)<br>
      * 获得 
      */
-    public byte[] getImg() {
-        return img;
+    public String getParamValue() {
+        return paramValue;
     }
 
     /**
-     * LONGVARBINARY(16777215)<br>
+     * VARCHAR(100)<br>
      * 设置 
      */
-    public void setImg(byte[] img) {
-        this.img = img;
+    public void setParamValue(String paramValue) {
+        this.paramValue = paramValue == null ? null : paramValue.trim();
     }
 
     @Override
@@ -84,8 +83,8 @@ public class SysUserImage implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", userId=").append(userId);
-        sb.append(", img=").append(img);
+        sb.append(", paramName=").append(paramName);
+        sb.append(", paramValue=").append(paramValue);
         sb.append("]");
         return sb.toString();
     }
@@ -101,10 +100,10 @@ public class SysUserImage implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        SysUserImage other = (SysUserImage) that;
+        SysParam other = (SysParam) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
-            && (Arrays.equals(this.getImg(), other.getImg()));
+            && (this.getParamName() == null ? other.getParamName() == null : this.getParamName().equals(other.getParamName()))
+            && (this.getParamValue() == null ? other.getParamValue() == null : this.getParamValue().equals(other.getParamValue()));
     }
 
     @Override
@@ -112,8 +111,8 @@ public class SysUserImage implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
-        result = prime * result + (Arrays.hashCode(getImg()));
+        result = prime * result + ((getParamName() == null) ? 0 : getParamName().hashCode());
+        result = prime * result + ((getParamValue() == null) ? 0 : getParamValue().hashCode());
         return result;
     }
 }

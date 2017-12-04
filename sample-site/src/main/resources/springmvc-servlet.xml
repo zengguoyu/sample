@@ -19,13 +19,17 @@
 		<property name="order" value="999999" />
 	</bean>
 
+
+
+
 	<bean id="velocityConfigurer"
 		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
 		<property name="resourceLoaderPath"
-			value="WEB-INF/views/velocity/,classpath:/META-INF/resources/views/velocity/" /><!-- 
-			設置模板防止位置 -->
+			value="WEB-INF/views/velocity/,classpath:/META-INF/resources/views/velocity/" />
 		<property name="velocityProperties">
-			<props>
+			<props> 
+				<prop key="spring.resource.loader.cache">false</prop>
+				<prop key="spring.resource.loader.modificationCheckInterval">1</prop>
 				<prop key="directive.foreach.counter.name">loopCounter</prop>
 				<prop key="directive.foreach.counter.initial.value">0</prop>
 				<prop key="input.encoding">UTF-8</prop><!-- 指定模板引擎进行模板处理的编码 -->
@@ -33,24 +37,26 @@
 				<prop key="velocimacro.library">macro/macros.vm</prop>
 			</props>
 		</property>
+
 	</bean>
 
 
-	<bean id="viewResolver"
+	<bean
 		class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.velocity.VelocityLayoutView"></property>
 		<property name="cache" value="false" />
 		<property name="suffix" value=".vm" />
+		<property name="order" value="99999" />
 		<property name="toolboxConfigLocation" value="/WEB-INF/classes/toolbox.xml" />
 		<property name="contentType" value="text/html;charset=UTF-8" />
 		<property name="exposeSpringMacroHelpers" value="true" />
 		<property name="exposeRequestAttributes" value="true" />
 		<property name="exposeSessionAttributes" value="true" />
-		<property name="order" value="99999" />
 		<property name="requestContextAttribute" value="rc" />
 		<property name="layoutUrl" value="layout/blank.vm" />
 	</bean>
+
 
 
 	<mvc:resources location="assets/,classpath:/META-INF/resources/webjars/"

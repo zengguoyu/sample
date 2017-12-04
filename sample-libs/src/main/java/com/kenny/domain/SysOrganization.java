@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
 * @author ZengGuoyu
-* @date 2017-10-24 21:05:20
+* @date 2017-11-03 22:29:06
 * @description 本文件自动生成，请勿修改
 */
 public class SysOrganization implements Serializable {
